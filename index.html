@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Alwar Luxury Farmhouse Corridor - Premium Investment Portfolio
+    </title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        background: linear-gradient(135deg, #fefef0 0%, #f4e4bc 100%);
+        color: #36454f;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .pdf-viewer {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 20px 60px rgba(54, 69, 79, 0.15);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #7b8d3b 0%, #daa520 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,50 Q25,30 50,50 T100,50 L100,100 L0,100 Z" fill="rgba(255,255,255,0.1)"/></svg>')
+          no-repeat center;
+        background-size: cover;
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .logo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        font-weight: 300;
+        opacity: 0.95;
+        margin-bottom: 20px;
+      }
+
+      .nav-tabs {
+        display: flex;
+        background: #36454f;
+        border-radius: 0;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .nav-tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-tab {
+        flex: 1;
+        min-width: 150px;
+        padding: 15px 20px;
+        background: transparent;
+        border: none;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-bottom: 3px solid transparent;
+        white-space: nowrap;
+      }
+
+      .nav-tab:hover {
+        background: rgba(218, 165, 32, 0.2);
+        border-bottom-color: #daa520;
+      }
+
+      .nav-tab.active {
+        background: #daa520;
+        border-bottom-color: #f4e4bc;
+      }
+
+      .content-area {
+        min-height: 600px;
+        padding: 40px;
+        background: white;
+      }
+
+      .page {
+        display: none;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .page.active {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .page-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #7b8d3b;
+        margin-bottom: 30px;
+        text-align: center;
+        position: relative;
+      }
+
+      .page-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #daa520, #7b8d3b);
+        border-radius: 2px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .card {
+        background: linear-gradient(135deg, #fefef0 0%, #f4e4bc 100%);
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 8px 25px rgba(54, 69, 79, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(218, 165, 32, 0.2);
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(54, 69, 79, 0.15);
+      }
+
+      .card-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #36454f;
+        margin-bottom: 15px;
+      }
+
+      .card-content {
+        color: #36454f;
+        line-height: 1.7;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .stat-card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(54, 69, 79, 0.1);
+        border-left: 4px solid #daa520;
+      }
+
+      .stat-number {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #7b8d3b;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: #36454f;
+        margin-top: 5px;
+      }
+
+      .project-showcase {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin: 30px 0;
+      }
+
+      .project-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(54, 69, 79, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .project-image {
+        height: 200px;
+        background: linear-gradient(135deg, #7b8d3b, #daa520);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.3)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.2)"/><circle cx="60" cy="80" r="1" fill="rgba(255,255,255,0.4)"/></svg>');
+      }
+
+      .project-info {
+        padding: 20px;
+      }
+
+      .project-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #36454f;
+        margin-bottom: 10px;
+      }
+
+      .project-details {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      .price-tag {
+        background: linear-gradient(135deg, #daa520, #7b8d3b);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        display: inline-block;
+        font-size: 0.9rem;
+      }
+
+      .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(54, 69, 79, 0.1);
+      }
+
+      .comparison-table th {
+        background: linear-gradient(135deg, #7b8d3b, #daa520);
+        color: white;
+        padding: 15px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+      }
+
+      .comparison-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .comparison-table tr:nth-child(even) {
+        background: #fefef0;
+      }
+
+      .timeline {
+        position: relative;
+        margin: 30px 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 30px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(180deg, #daa520, #7b8d3b);
+        border-radius: 2px;
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 30px;
+        padding-left: 80px;
+      }
+
+      .timeline-marker {
+        position: absolute;
+        left: 18px;
+        top: 5px;
+        width: 25px;
+        height: 25px;
+        background: #daa520;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+
+      .timeline-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(54, 69, 79, 0.1);
+      }
+
+      .timeline-title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        color: #36454f;
+        margin-bottom: 8px;
+      }
+
+      .cta-section {
+        background: linear-gradient(135deg, #36454f, #7b8d3b);
+        color: white;
+        padding: 40px;
+        border-radius: 15px;
+        text-align: center;
+        margin: 40px 0;
+      }
+
+      .cta-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 25px;
+      }
+
+      .btn {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-primary {
+        background: #daa520;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: #b8941c;
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-secondary:hover {
+        background: white;
+        color: #36454f;
+      }
+
+      .footer {
+        background: #36454f;
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 20px;
+      }
+
+      .footer-section h4 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #daa520;
+      }
+
+      .contact-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+        }
+
+        .content-area {
+          padding: 20px;
+        }
+
+        .grid-2,
+        .grid-3,
+        .grid-4 {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-tabs {
+          flex-direction: column;
+        }
+
+        .nav-tab {
+          min-width: auto;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .logo {
+          font-size: 2rem;
+        }
+
+        .page-title {
+          font-size: 1.8rem;
+        }
+      }
+
+      .loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+        font-size: 1.1rem;
+        color: #7b8d3b;
+      }
+
+      .highlight {
+        background: linear-gradient(
+          120deg,
+          rgba(218, 165, 32, 0.3) 0%,
+          rgba(218, 165, 32, 0.1) 100%
+        );
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="pdf-viewer">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-content">
+            <div class="logo">🏡 LushGreens</div>
+            <div class="tagline">
+              Where Delhi Meets the Desert – Premium Retreat Investments
+            </div>
+            <div style="font-size: 0.9rem; opacity: 0.8">
+              Alwar Luxury Farmhouse Corridor | Delhi-Mumbai Expressway
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-tabs">
+          <button class="nav-tab active" onclick="showPage('executive')">
+            Executive Summary
+          </button>
+          <button class="nav-tab" onclick="showPage('projects')">
+            Project Profiles
+          </button>
+          <button class="nav-tab" onclick="showPage('insights')">
+            Market Insights
+          </button>
+          <button class="nav-tab" onclick="showPage('investment')">
+            Investment Guide
+          </button>
+          <button class="nav-tab" onclick="showPage('contact')">
+            Contact & Legal
+          </button>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+          <!-- Executive Summary Page -->
+          <div id="executive" class="page active">
+            <div class="page-title">Executive Summary</div>
+
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="stat-number">₹500Cr+</span>
+                <div class="stat-label">Portfolio Value</div>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">4</span>
+                <div class="stat-label">Premium Projects</div>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">18-25%</span>
+                <div class="stat-label">Expected ROI</div>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">45 min</span>
+                <div class="stat-label">From Delhi NCR</div>
+              </div>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="card">
+                <div class="card-title">🎯 Investment Thesis</div>
+                <div class="card-content">
+                  Strategic positioning along the
+                  <span class="highlight">Delhi-Mumbai Expressway</span> creates
+                  unprecedented connectivity to India's financial capitals. Our
+                  curated portfolio of luxury farmhouses targets the growing
+                  demand for
+                  <span class="highlight">wellness retreats</span> and
+                  <span class="highlight">alternative investments</span> among
+                  HNIs and NRIs.
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-title">🌍 Market Opportunity</div>
+                <div class="card-content">
+                  The luxury farmhouse segment has grown
+                  <span class="highlight">35% annually</span> post-pandemic.
+                  With increasing urbanization and wellness consciousness,
+                  demand for premium rural retreats near major cities presents a
+                  <span class="highlight">₹2,000 Cr market opportunity</span> in
+                  the NCR periphery.
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-title">📍 Location Advantage</div>
+                <div class="card-content">
+                  Nestled in the
+                  <span class="highlight">Aravalli foothills</span>, our
+                  projects offer pristine natural beauty with world-class
+                  connectivity. The expressway reduces travel time to Delhi by
+                  60%, making weekend retreats and business meetings equally
+                  convenient.
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-title">💼 Revenue Streams</div>
+                <div class="card-content">
+                  Multiple monetization channels including
+                  <span class="highlight">luxury rentals</span>,
+                  <span class="highlight">corporate retreats</span>,
+                  <span class="highlight">wedding venues</span>, and
+                  <span class="highlight">wellness programs</span>. Professional
+                  management ensures passive income with minimal owner
+                  involvement.
+                </div>
+              </div>
+            </div>
+
+            <div class="cta-section">
+              <div class="cta-title">
+                Ready to Explore Premium Investment Opportunities?
+              </div>
+              <p>
+                Join exclusive investors who've already secured their slice of
+                this emerging market
+              </p>
+              <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="showPage('projects')">
+                  View Projects
+                </button>
+                <button class="btn btn-secondary" onclick="showPage('contact')">
+                  Schedule Site Visit
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Profiles Page -->
+          <div id="projects" class="page">
+            <div class="page-title">Premium Project Portfolio</div>
+
+            <div class="project-showcase">
+              <div class="project-card">
+                <div class="project-image">🏰</div>
+                <div class="project-info">
+                  <div class="project-title">Aravalli Estates</div>
+                  <div class="project-details">
+                    • 50 luxury plots (2-5 acres)<br />
+                    • Heritage-inspired architecture<br />
+                    • Private lake & spa facilities<br />
+                    • 24/7 concierge services
+                  </div>
+                  <div class="price-tag">₹2.5-8 Cr per plot</div>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-image">🌿</div>
+                <div class="project-info">
+                  <div class="project-title">Desert Bloom Villas</div>
+                  <div class="project-details">
+                    • 30 eco-luxury farmhouses<br />
+                    • Solar-powered & sustainable<br />
+                    • Organic farming integration<br />
+                    • Wellness & yoga centers
+                  </div>
+                  <div class="price-tag">₹3-6 Cr per villa</div>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-image">🏛️</div>
+                <div class="project-info">
+                  <div class="project-title">Royal Retreat Mansions</div>
+                  <div class="project-details">
+                    • 20 palatial estates (5-10 acres)<br />
+                    • Rajasthani royal architecture<br />
+                    • Private helipads available<br />
+                    • Event & wedding venues
+                  </div>
+                  <div class="price-tag">₹8-15 Cr per mansion</div>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-image">🎪</div>
+                <div class="project-info">
+                  <div class="project-title">Adventure Valley Camps</div>
+                  <div class="project-details">
+                    • 40 luxury glamping sites<br />
+                    • Adventure sports facilities<br />
+                    • Corporate team building<br />
+                    • High-yield rental model
+                  </div>
+                  <div class="price-tag">₹1.5-3 Cr per site</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">🎯 Investment Highlights</div>
+              <div class="card-content">
+                <div class="grid grid-3">
+                  <div>
+                    <strong>📈 Appreciation Potential</strong><br />
+                    Historical growth: 15-20% annually<br />
+                    Expressway impact: Additional 8-12%
+                  </div>
+                  <div>
+                    <strong>💰 Rental Yields</strong><br />
+                    Weekend rentals: ₹25-75K/night<br />
+                    Corporate events: ₹1-5L/day
+                  </div>
+                  <div>
+                    <strong>🏗️ Development Timeline</strong><br />
+                    Phase 1: 18-24 months<br />
+                    Full completion: 36 months
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Market Insights Page -->
+          <div id="insights" class="page">
+            <div class="page-title">Market Analysis & Insights</div>
+
+            <div class="grid grid-2">
+              <div class="card">
+                <div class="card-title">📊 Market Growth Drivers</div>
+                <div class="card-content">
+                  <strong>Post-Pandemic Lifestyle Shift:</strong><br />
+                  • 67% of HNIs prioritize wellness & nature<br />
+                  • Work-from-anywhere culture adoption<br />
+                  • Increased focus on family time<br /><br />
+
+                  <strong>Infrastructure Development:</strong><br />
+                  • Delhi-Mumbai Expressway completion<br />
+                  • Improved airport connectivity<br />
+                  • Enhanced digital infrastructure
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-title">🎯 Target Demographics</div>
+                <div class="card-content">
+                  <strong>Primary Investors (70%):</strong><br />
+                  • HNIs with ₹10+ Cr net worth<br />
+                  • Age: 35-55 years<br />
+                  • Business owners & CXOs<br /><br />
+
+                  <strong>Secondary Market (30%):</strong><br />
+                  • NRIs seeking India exposure<br />
+                  • Family offices & institutions<br />
+                  • Lifestyle-focused millennials
+                </div>
+              </div>
+            </div>
+
+            <div class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Investment Comparison</th>
+                  <th>Luxury Farmhouses</th>
+                  <th>Commercial Real Estate</th>
+                  <th>Residential Apartments</th>
+                  <th>Stock Market</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Expected Returns</strong></td>
+                  <td>18-25% annually</td>
+                  <td>12-18% annually</td>
+                  <td>8-12% annually</td>
+                  <td>10-15% annually</td>
+                </tr>
+                <tr>
+                  <td><strong>Rental Yield</strong></td>
+                  <td>6-12% annually</td>
+                  <td>6-9% annually</td>
+                  <td>2-4% annually</td>
+                  <td>1-3% dividend</td>
+                </tr>
+                <tr>
+                  <td><strong>Liquidity</strong></td>
+                  <td>Medium (2-3 years)</td>
+                  <td>Low (3-5 years)</td>
+                  <td>Medium (1-2 years)</td>
+                  <td>High (instant)</td>
+                </tr>
+                <tr>
+                  <td><strong>Risk Level</strong></td>
+                  <td>Medium</td>
+                  <td>Medium-High</td>
+                  <td>Low-Medium</td>
+                  <td>High</td>
+                </tr>
+                <tr>
+                  <td><strong>Tax Benefits</strong></td>
+                  <td>Depreciation, LTCG</td>
+                  <td>Depreciation, LTCG</td>
+                  <td>Home loan, LTCG</td>
+                  <td>LTCG only</td>
+                </tr>
+              </tbody>
+            </div>
+
+            <div class="card">
+              <div class="card-title">⚠️ Risk Assessment & Mitigation</div>
+              <div class="card-content">
+                <div class="grid grid-2">
+                  <div>
+                    <strong>Identified Risks:</strong><br />
+                    • Regulatory changes in land laws<br />
+                    • Economic downturn impact<br />
+                    • Construction delays<br />
+                    • Market saturation concerns
+                  </div>
+                  <div>
+                    <strong>Mitigation Strategies:</strong><br />
+                    • Legal due diligence & clear titles<br />
+                    • Diversified revenue streams<br />
+                    • Experienced development partners<br />
+                    • Phased development approach
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Investment Guide Page -->
+          <div id="investment" class="page">
+            <div class="page-title">Investment Process & Timeline</div>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-marker">1</div>
+                <div class="timeline-content">
+                  <div class="timeline-title">
+                    Initial Consultation & Site Visit
+                  </div>
+                  <p>
+                    Meet our investment advisors, review portfolio options, and
+                    visit shortlisted properties. We arrange helicopter tours
+                    for premium investors.
+                  </p>
+                  <small><strong>Duration:</strong> 1-2 weeks</small>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker">2</div>
+                <div class="timeline-content">
+                  <div class="timeline-title">
+                    Due Diligence & Documentation
+                  </div>
+                  <p>
+                    Legal verification, title clearance, and financial
+                    structuring. Our legal team ensures all compliance
+                    requirements are met.
+                  </p>
+                  <small><strong>Duration:</strong> 2-3 weeks</small>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker">3</div>
+                <div class="timeline-content">
+                  <div class="timeline-title">
+                    Investment Agreement & Booking
+                  </div>
+                  <p>
+                    Finalize terms, sign agreements, and secure your investment
+                    with initial payment. Flexible payment plans available.
+                  </p>
+                  <small><strong>Duration:</strong> 1 week</small>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker">4</div>
+                <div class="timeline-content">
+                  <div class="timeline-title">Development & Construction</div>
+                  <p>
+                    Regular progress updates, quality monitoring, and
+                    milestone-based payments. Virtual progress tracking
+                    available.
+                  </p>
+                  <small><strong>Duration:</strong> 18-36 months</small>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker">5</div>
+                <div class="timeline-content">
+                  <div class="timeline-title">
+                    Handover & Revenue Generation
+                  </div>
+                  <p>
+                    Property handover, management setup, and revenue stream
+                    activation. Professional property management included.
+                  </p>
+                  <small><strong>Duration:</strong> 1 month</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="card">
+                <div class="card-title">💳 Payment Structure</div>
+                <div class="card-content">
+                  <strong>Flexible Payment Options:</strong><br /><br />
+
+                  <strong>Option 1 - Standard Plan:</strong><br />
+                  • Booking: 20% on agreement<br />
+                  • Construction: 60% in milestones<br />
+                  • Completion: 20% on handover<br /><br />
+
+                  <strong>Option 2 - Early Bird:</strong><br />
+                  • 50% upfront payment<br />
+                  • 5% additional discount<br />
+                  • Priority plot selection<br /><br />
+
+                  <strong>NRI Special:</strong><br />
+                  • Foreign currency payments<br />
+                  • FEMA compliance support<br />
+                  • Repatriation assistance
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-title">🏆 Investor Benefits</div>
+                <div class="card-content">
+                  <strong>Exclusive Privileges:</strong><br /><br />
+
+                  • <strong>Ownership Benefits:</strong> Personal use rights,
+                  family access<br />
+                  • <strong>Revenue Sharing:</strong> 70-80% of rental income<br />
+                  • <strong>Management Services:</strong> Complete property
+                  management<br />
+                  • <strong>Lifestyle Access:</strong> Club memberships,
+                  events<br />
+                  • <strong>Exit Strategy:</strong> Buyback guarantee options<br />
+                  • <strong>Tax Optimization:</strong> Structured for maximum
+                  benefits
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact & Legal Page -->
+          <div id="contact" class="page">
+            <div class="page-title">Contact & Legal Information</div>
+
+            <div class="grid grid-2">
+              <div class="card">
+                <div class="card-title">📞 Get in Touch</div>
+                <div class="card-content">
+                  <div class="contact-info">
+                    <span>📧</span>
+                    <div>
+                      <strong>Email:</strong><br />
+                      investments@lushgreens.com<br />
+                      info@orlovrealty.com
+                    </div>
+                  </div>
+
+                  <div class="contact-info">
+                    <span>📱</span>
+                    <div>
+                      <strong>Phone:</strong><br />
+                      +91 98765 43210<br />
+                      +91 87654 32109
+                    </div>
+                  </div>
+
+                  <div class="contact-info">
+                    <span>🏢</span>
+                    <div>
+                      <strong>Office:</strong><br />
+                      Orlov Realty Pvt Ltd<br />
+                      DLF Cyber City, Gurgaon<br />
+                      Haryana 122002
+                    </div>
+                  </div>
+
+                  <div class="contact-info">
+                    <span>🌐</span>
+                    <div>
+                      <strong>Website:</strong><br />
+                      www.lushgreens.com<br />
+                      www.orlovrealty.com
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-title">⚖️ Legal Framework</div>
+                <div class="card-content">
+                  <strong>Regulatory Compliance:</strong><br />
+                  • RERA Registration: HR-REP-2024-001<br />
+                  • Environmental Clearance: Obtained<br />
+                  • Land Title: Clear & Marketable<br />
+                  • Development Permissions: Approved<br /><br />
+
+                  <strong>Documentation:</strong><br />
+                  • Sale Deed & Registration<br />
+                  • Development Agreement<br />
+                  • Property Management Contract<br />
+                  • Revenue Sharing Agreement<br /><br />
+
+                  <strong>Investor Protection:</strong><br />
+                  • Escrow Account Management<br />
+                  • Third-party Quality Audits<br />
+                  • Insurance Coverage<br />
+                  • Legal Recourse Mechanisms
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">📋 Important Disclaimers</div>
+              <div class="card-content">
+                <p>
+                  <strong>Investment Risks:</strong> All investments carry
+                  inherent risks. Past performance does not guarantee future
+                  returns. Investors should conduct independent due diligence
+                  and consult financial advisors before making investment
+                  decisions.
+                </p>
+                <br />
+
+                <p>
+                  <strong>Regulatory Compliance:</strong> This document is for
+                  informational purposes only and does not constitute a public
+                  offer. All investments are subject to applicable laws and
+                  regulations including FEMA guidelines for NRI investors.
+                </p>
+                <br />
+
+                <p>
+                  <strong>Market Conditions:</strong> Projected returns are
+                  estimates based on current market conditions and may vary due
+                  to economic factors, regulatory changes, and market dynamics.
+                </p>
+                <br />
+
+                <p>
+                  <strong>Development Timeline:</strong> Construction timelines
+                  are subject to regulatory approvals, weather conditions, and
+                  other factors beyond developer control. Delays may occur
+                  despite best efforts.
+                </p>
+                <br />
+
+                <p>
+                  <strong>Legal Verification:</strong> Investors are advised to
+                  independently verify all legal documents, approvals, and
+                  clearances before making investment commitments.
+                </p>
+              </div>
+            </div>
+
+            <div class="cta-section">
+              <div class="cta-title">
+                Ready to Begin Your Investment Journey?
+              </div>
+              <p>
+                Schedule a personalized consultation with our investment experts
+              </p>
+              <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="scheduleCall()">
+                  Schedule Call
+                </button>
+                <button class="btn btn-secondary" onclick="downloadBrochure()">
+                  Download Brochure
+                </button>
+                <button class="btn btn-primary" onclick="siteVisit()">
+                  Book Site Visit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h4>LushGreens Portfolio</h4>
+              <p>
+                Premium farmhouse investments along the Delhi-Mumbai Expressway.
+                Where luxury meets nature, and investments meet lifestyle.
+              </p>
+            </div>
+            <div class="footer-section">
+              <h4>Quick Links</h4>
+              <p>
+                • Investment Calculator<br />• Site Visit Booking<br />• Legal
+                Documentation<br />• Investor Portal
+              </p>
+            </div>
+            <div class="footer-section">
+              <h4>Follow Us</h4>
+              <p>
+                • LinkedIn: /company/lushgreens<br />• Instagram:
+                @lushgreens_official<br />• YouTube: LushGreens Investments<br />•
+                Twitter: @lushgreens_in
+              </p>
+            </div>
+          </div>
+          <div
+            style="
+              border-top: 1px solid rgba(255, 255, 255, 0.2);
+              padding-top: 20px;
+              margin-top: 20px;
+            "
+          >
+            <p>
+              &copy; 2024 Orlov Realty Pvt Ltd. All rights reserved. | RERA:
+              HR-REP-2024-001 | CIN: U70100HR2020PTC089123
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showPage(pageId) {
+        // Hide all pages
+        const pages = document.querySelectorAll(".page");
+        pages.forEach((page) => page.classList.remove("active"));
+
+        // Remove active class from all tabs
+        const tabs = document.querySelectorAll(".nav-tab");
+        tabs.forEach((tab) => tab.classList.remove("active"));
+
+        // Show selected page
+        document.getElementById(pageId).classList.add("active");
+
+        // Add active class to clicked tab
+        event.target.classList.add("active");
+
+        // Smooth scroll to top
+        document.querySelector(".content-area").scrollTop = 0;
+      }
+
+      function scheduleCall() {
+        alert(
+          "📞 Thank you for your interest! Our investment advisor will contact you within 24 hours to schedule a personalized consultation.\n\nMeanwhile, you can also reach us at:\n📧 investments@lushgreens.com\n📱 +91 98765 43210"
+        );
+      }
+
+      function downloadBrochure() {
+        alert(
+          "📄 Detailed brochure download initiated!\n\nYou will receive:\n• Complete project specifications\n• Financial projections\n• Legal documentation\n• Site maps and layouts\n\nCheck your downloads folder in a moment."
+        );
+      }
+
+      function siteVisit() {
+        alert(
+          "🚁 Site visit booking confirmed!\n\nOur team will arrange:\n• Helicopter tour (for premium investors)\n• Ground transportation\n• Refreshments and lunch\n• Meeting with project architects\n\nYou'll receive confirmation details shortly."
+        );
+      }
+
+      // Add smooth scrolling and interactive elements
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add loading animation
+        const cards = document.querySelectorAll(
+          ".card, .project-card, .stat-card"
+        );
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        });
+
+        cards.forEach((card) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(20px)";
+          card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+          observer.observe(card);
+        });
+
+        // Add click tracking for analytics
+        document
+          .querySelectorAll(".btn, .nav-tab, .project-card")
+          .forEach((element) => {
+            element.addEventListener("click", function () {
+              console.log(
+                "User interaction:",
+                this.textContent || this.className
+              );
+            });
+          });
+      });
+
+      // Add keyboard navigation
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+          const tabs = document.querySelectorAll(".nav-tab");
+          const activeTab = document.querySelector(".nav-tab.active");
+          const currentIndex = Array.from(tabs).indexOf(activeTab);
+
+          let nextIndex;
+          if (e.key === "ArrowRight") {
+            nextIndex = (currentIndex + 1) % tabs.length;
+          } else {
+            nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+          }
+
+          tabs[nextIndex].click();
+        }
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'975c162c072b91ec',t:'MTc1NjMwMzEzNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
